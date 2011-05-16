@@ -10,7 +10,7 @@ This code is licensed under the MIT license. Please see the LICENSE file for mor
 Basic Usage
 ===========
 
-Everything is modular, which makes things very convenient.  The main file is `convert.js`. Include it and you get a function with two parameters:
+Everything is modular, which makes things very convenient.  The main file is `index.js`. Include it and you get a function with two parameters:
 
 * `inputType`- type to convert from (so far, only utm and latlong)
 * `outType`- type to convert to

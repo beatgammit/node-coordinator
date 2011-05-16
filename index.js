@@ -2,9 +2,9 @@
     "use strict";
 
     var converters = {
-        'latlong': require('./latlong'),
-        'usng': require('./usng'),
-        'utm': require('./utm')
+        'latlong': require('./lib/latlong'),
+        'usng': require('./lib/usng'),
+        'utm': require('./lib/utm')
     };
 
     function getConverter(inputType, outType) {

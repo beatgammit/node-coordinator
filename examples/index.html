@@ -1,0 +1,57 @@
+<html>
+
+<head>
+
+<title>Lat/Long & MGRS conversion</title>
+
+<script src='examples/require-kiss.js'></script>
+<script src='examples/ender.js'></script>
+<script src='lib/constants.js'></script>
+<script src='lib/helpers.js'></script>
+<script src='lib/utm.js'></script>
+<script src='lib/latlong.js'></script>
+<script src='lib/usng.js'></script>
+<script src='lib/convert.js'></script>
+<script src='index.js'></script>
+
+<script>
+(function () {
+    "use strict";
+
+    var coordinator = require('coordinator');
+
+    $.domReady(function () {
+        $('#convert')[0].addEventListener('click', function () {
+            var fn = coordinator('latlong', 'mgrs'),
+                res;
+            res = fn($('#latitude').val(), $('#longitude').val(), 5);
+
+            $('#mgrs').val(res);
+        }, false);
+    });
+}());
+</script>
+
+</head>
+
+<body>
+
+Latitude: <input type='textfield' name='lat' id='latitude' />
+
+<br />
+
+Longitude: <input type='textfield' name='long' id='longitude' />
+
+<br />
+<br />
+
+MGRS: <input type='textfield' name='mgrs' id='mgrs' />
+
+<br />
+<br />
+
+<button id='convert'>Convert</button>
+
+</body>
+
+</html>

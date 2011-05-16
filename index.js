@@ -1,25 +1,9 @@
 (function () {
     "use strict";
 
-    var converters = {
-        'latlong': require('./lib/latlong'),
-        'usng': require('./lib/usng'),
-        'utm': require('./lib/utm')
-    };
+    require('require-kiss');
 
-    function getConverter(inputType, outType) {
-        if (typeof inputType !== 'string') {
-            throw new Error('Parameter not a string: ' + inputType);
-        }
+    module.exports = require('./lib/convert');
 
-        if (typeof outType !== 'string') {
-            throw new Error('Parameter not a string: ' + outType);
-        }
-
-        if (converters[inputType]) {
-            return converters.getConverter(outType);
-        }
-    }
-
-    module.exports = getConverter;
+    provide('coordinator', module.exports);
 }());

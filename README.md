@@ -96,7 +96,7 @@ Converts UTM to Lat/Long.
 Adding Modules
 ==============
 
-Modules right now are kind of stupid, so the `convert.js` file will have to be edited manually, but this seemed simple enough.
+Modules right now are kind of stupid, so the `index.js` file will have to be edited manually, but this seemed simple enough.
 
 Create a module that exports a single function, `getConverter`.  This should take a single argument (the system to convert to) and return a function that handles the conversion.
 
@@ -109,23 +109,23 @@ Code Overview
 
 There are a few files that are of interest for someone adding to the module:
 
-* `constants.js`- has common constants needed for conversion
-* `convert.js`- main file; this file is the preferred interface
-* `helpers.js`- helper functions to reduce clutter
+* `lib/constants.js`- has common constants needed for conversion
+* `index.js`- main file; this file is the preferred interface
+* `lib/helpers.js`- helper functions to reduce clutter
 
 Right now, only lat/long, UTM, and USNG/MGRS are supported:
 
-* `latlong.js`- exports four functions, the most important being getConverter
+* `lib/latlong.js`- exports four functions, the most important being getConverter
   * `getConverter`- required to integrate with the module; returns conversion function
   * `toUtm`- converts lat/long to UTM
   * `toMgrs`- converts lat/long to MGRS using UTM in the background
   * `toUsng`- converts lat/long to USNG using UTM in the background
-* `usng.js`- exports four functions, the most important being getConverter
+* `lib/usng.js`- exports four functions, the most important being getConverter
   * `getConverter`- required to integrate with the module; returns conversion function
   * `toUtm`- converts USNG coordinate to UTM
   * `toLatLong`- converts USNG to lat/long
   * `isUsng`- validates an input string. Returns 0 if not valid or the string in upper-case without space delimiters
-* `utm.js`- exports two functions, the most important being being getConverter
+* `lib/utm.js`- exports two functions, the most important being being getConverter
   * `getConverter`- required to integrate with the module; returns conversion function
   * `toLatLong`- converts UTM to lat/long
 
@@ -173,4 +173,3 @@ Modifications and developments continued by Doug Tallman from December 2002 thro
 Adopted with modifications by Larry Moore, January 2007, for GoogleMaps application.
 
 Adopted with formatting and organization modifications by T. Jameson Little, May 2011, for addition to NPM.
-

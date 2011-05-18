@@ -4,8 +4,8 @@
 
 <title>Lat/Long & MGRS conversion</title>
 
-<script src='examples/require-kiss.js'></script>
 <script src='examples/ender.min.js'></script>
+<script src='examples/require-kiss.js'></script>
 <script src='lib/constants.js'></script>
 <script src='lib/helpers.js'></script>
 <script src='lib/utm.js'></script>
@@ -21,7 +21,7 @@
     var coordinator = require('coordinator');
 
     $.domReady(function () {
-        $('#convert')[0].addEventListener('click', function () {
+        $('#convert').bind('click', function () {
             var fn = coordinator('latlong', 'mgrs'),
                 res;
             res = fn($('#latitude').val(), $('#longitude').val(), 5);

@@ -7,6 +7,12 @@ The algorithms and most of the code is not my own.  I have refactored the code t
 
 This code is licensed under the MIT license. Please see the LICENSE file for more information.
 
+Conversion support is nowhere near complete. For now, only these conversions are supported.
+
+* Lat/Long -> MGRS, USNG, UTM
+* UTM -> Lat/Long
+* USNG -> Lat/Long, UTM
+
 Basic Usage
 ===========
 
@@ -58,15 +64,15 @@ USNG conversions
 
 **To Lat/Long**
 
-`toLatLong(usng_string, latlong)`
+`toLatLong(usng_string)`
 
 * `usngStr`- supports three formats and all precisions of easting and northing
   * NNCCCNNNNNNNNNN
   * NNC CC NNNNNNNNNN
   * NNC CC NNNNN NNNNN
-* `latlong`- 2-element array- this is where the output goes
-  * `lanlong[0]`- latitude; decimal degrees (west is negative)
-  * `latlong[1]`- longitude; decimal degrees (south is negative)
+* `return`- property with two properties, latitude & longitude
+  * `latitude`- decimal degrees (west is negative)
+  * `longitude`- decimal degrees (south is negative)
 
 **USNG Validation**
 
@@ -86,12 +92,12 @@ UTM Conversions
 
 Converts UTM to Lat/Long.
 
-`toLatLong(UTMNorthing, UTMEasting, UTMZoneNumber, ret)`
+`toLatLong(UTMNorthing, UTMEasting, UTMZoneNumber)`
 
 * `UTMNorthing`- northing-m (numeric), eg. 432001.8  
 * `UTMEasting`- easting-m (numeric), eg. 4000000.0
 * `UTMZoneNumber`- 6-deg longitudinal zone (numeric), eg. 18
-* `ret`- return values: ret.lat and ret.lon
+* `return`- object with two properties, latitude and longitude
 
 Adding Modules
 ==============

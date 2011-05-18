@@ -2,7 +2,6 @@
     "use strict";
 
     var connect = require('connect'),
-        stuff = require('coordinator'),
         port = 21212;
 
     connect(

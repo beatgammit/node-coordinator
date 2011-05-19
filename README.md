@@ -3,7 +3,9 @@ Intro
 
 This code converts between coordinate systems, particularly Lat/Long and USNG (MGRS). It is extensible, so if you can come up with an algorithm, fork and add it. Details for adding modules are included.  Happy hacking!
 
-The algorithms and most of the code is not my own.  I have refactored the code to be more module-friendly and I am merely maintaining the code.  Appropriate credits have been included in this README under `References`.
+The algorithms and most of the code is not my own. I have refactored the code to be more module-friendly and I have added a few functions. I mostly consider myself a maintainer of the code, but I feel I have made enough changes so I have changed the copyright notices to be in my name. Appropriate credits have been included in this README under `References`.
+
+I do not guarantee any of the algorithms to be accurate, and appropriate testing should be done before this module is relied upon for accuracy.
 
 This code is licensed under the MIT license. Please see the LICENSE file for more information.
 
@@ -108,10 +110,10 @@ Create a module that exports a single function, `getConverter`.  This should tak
 
 To add a module, just add an entry to the converters object with the from coordinate system (say `xyz`) and require your converter module. Names are case-insensitive.
 
-Please try to avoid using `this`; it really does not make any sense anyway.
-
 Code Overview
-=============
+-------------
+
+For detailed information about functions, constants, etc, please see the README in the lib directory.  It explains exactly what is in each file.
 
 There are a few files that are of interest for someone adding to the module:
 
@@ -144,7 +146,7 @@ Note regarding UTM coordinates: UTM calculations are an intermediate step in lat
 References
 ==========
 
-This code was originally written by Larry Moore, <larmoor@gmail.com>, and the came from this address: <http://dhost.info/usngweb/help_usng.html>.  The code has undergone some changes (mostly formatting) in order to make it cleaner and to publish it to NPM.
+This code was originally written by Larry Moore, <larmoor@gmail.com>, and came from this address: <http://dhost.info/usngweb/help_usng.html>.  The code has undergone some changes (mostly formatting) in order to make it cleaner and to publish it to NPM. If there are any errors, they are probably my fault.
 
 For detailed information on the U.S. National Grid coordinate system, see <http://www.fgdc.gov/usng>
 
@@ -178,4 +180,4 @@ Modifications and developments continued by Doug Tallman from December 2002 thro
 
 Adopted with modifications by Larry Moore, January 2007, for GoogleMaps application.
 
-Adopted with formatting and organization modifications by T. Jameson Little, May 2011, for addition to NPM.
+Adopted with formatting and organization modifications by T. Jameson Little, May 2011, for addition to NPM. Some additional conversions were also made by the same.

@@ -11,6 +11,7 @@
 <script src='lib/utm.js'></script>
 <script src='lib/latlong.js'></script>
 <script src='lib/usng.js'></script>
+<script src='lib/mgrs.js'></script>
 <script src='lib/convert.js'></script>
 <script src='coordinator.js'></script>
 
@@ -18,15 +19,32 @@
 (function () {
     "use strict";
 
-    var coordinator = require('coordinator');
+    var coordinator = require('coordinator'),
+        latLong = require('latlong');
 
     $.domReady(function () {
-        $('#convert').bind('click', function () {
+        $('#latlngConvert').bind('click', function () {
             var fn = coordinator('latlong', 'mgrs'),
                 res;
-            res = fn($('#latitude').val(), $('#longitude').val(), 5);
+            res = fn($('#srcLatitude').val(), $('#srcLongitude').val(), 5);
 
-            $('#mgrs').val(res);
+            $('#resMgrs').val(res);
+        }, false);
+
+        $('#mgrsConvert').bind('click', function () {
+            var fn = coordinator('mgrs', 'latlong'),
+                res,
+                resFmt;
+
+            res = fn($('#srcMgrs').val());
+
+            resFmt = latLong.toDegMinSec(res.latitude, res.longitude);
+
+            $('#resLatitude').val("" + res.latitude);
+            $('#resLongitude').val("" + res.longitude);
+
+            $('#resFmtLatitude').val(resFmt.latitude);
+            $('#resFmtLongitude').val(resFmt.longitude);
         }, false);
     });
 }());
@@ -36,21 +54,57 @@
 
 <body>
 
-Latitude: <input type='textfield' name='lat' id='latitude' />
-
-<br />
-
-Longitude: <input type='textfield' name='long' id='longitude' />
-
+Lat/Long to MGRS:
 <br />
 <br />
 
-MGRS: <input type='textfield' name='mgrs' id='mgrs' />
+Latitude: <input type='textfield' name='srcLat' id='srcLatitude' />
+
+<br />
+
+Longitude: <input type='textfield' name='srcLong' id='srcLongitude' />
 
 <br />
 <br />
 
-<button id='convert'>Convert</button>
+MGRS: <input type='textfield' name='resMgrs' id='resMgrs' />
+
+<br />
+<br />
+
+<button id='latlngConvert'>Convert</button>
+
+<br />
+<br />
+
+MGRS to Lat/Long:
+
+<br />
+<br />
+
+MGRS: <input type='textfield' name='srcMgrs' id='srcMgrs' />
+
+<br />
+<br />
+
+Latitude: <input type='textfield' name='resLat' id='resLatitude' />
+
+<br />
+
+Longitude: <input type='textfield' name='resLong' id='resLongitude' />
+
+<br />
+
+Latitude formatted: <input type='textfield' name='resLat' id='resFmtLatitude' />
+
+<br />
+
+Longitude formatted: <input type='textfield' name='resLong' id='resFmtLongitude' />
+
+<br />
+<br />
+
+<button id='mgrsConvert'>Convert</button>
 
 </body>
 

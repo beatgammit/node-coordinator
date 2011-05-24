@@ -1,4 +1,4 @@
-var mgrs = require('./mgrs');
+var mgrs = require('../lib/mgrs');
 
 
 if (process.argv.length === 3) {

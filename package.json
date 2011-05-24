@@ -2,7 +2,7 @@
   "author": "T. Jameson Little <t.jameson.little@gmail.com>",
   "name": "coordinator",
   "description": "Converts coordinates (e.g. lat/long to MGRS)",
-  "version": "0.3.5",
+  "version": "0.4.0",
   "homepage": "https://github.com/beatgammit/node-coordinator",
   "keywords": ["gps", "coordinates", "conversion", "mgrs", "usng", "utm", "latitude", "longitude", "lat/long", "coordinate", "system"],
   "repository": {

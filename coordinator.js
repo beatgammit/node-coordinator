@@ -5,5 +5,5 @@
 
     module.exports = require('./lib/convert');
 
-    provide('coordinator', module.exports);
+    provide('./coordinator', module.exports);
 }());

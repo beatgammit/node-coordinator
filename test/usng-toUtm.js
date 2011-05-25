@@ -1,10 +1,15 @@
-var usng = require('../lib/usng');
+var usng = require('../lib/usng'),
+    checksums = require('./checksums');
 
+checksums.forEach(function (item) {
+    var ret = usng.toUtm(item.mgrs);
 
-if (process.argv.length === 3) {
-    var ret = usng.parseUsng(process.argv[2]);
-    ret = usng.toUtm(ret.zoneNumber, ret.zoneLetter, ret.sq1, ret.sq2, ret.east, ret.north);
+    console.log("Original:");
+    console.log(item);
 
+    console.log("Return:");
     console.log(ret);
-}
+
+    console.log();
+});
 

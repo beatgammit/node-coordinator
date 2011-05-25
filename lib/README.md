@@ -8,7 +8,7 @@ helpers.js
 
 Contains various helper functions that have no home.
 
-UTMLetterDesignator
+utmLetterDesignator
 -------------------
 
 Retrieves the UTM grid zone designator letter given a latitude. Letters range from C (-80 latitude) to X (84 latitude). Anything outside of that will return Z.

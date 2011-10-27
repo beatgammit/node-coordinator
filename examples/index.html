@@ -1,68 +1,8 @@
 <html>
 
 <head>
-
 <title>Lat/Long & MGRS conversion</title>
-
-<script src='examples/ender.min.js'></script>
-<script src='examples/require-kiss.js'></script>
-<script src='lib/constants.js'></script>
-<script src='lib/utm/helpers.js'></script>
-<script src='lib/utm/utmToLatLong.js'></script>
-<script src='lib/utm/utmToUsng.js'></script>
-<script src='lib/utm.js'></script>
-<script src='lib/latlong/helpers.js'></script>
-<script src='lib/latlong/decimalToDegMinSec.js'></script>
-<script src='lib/latlong/latlongToUtm.js'></script>
-<script src='lib/latlong/translate.js'></script>
-<script src='lib/latlong/degMinSecToDecimal.js'></script>
-<script src='lib/latlong.js'></script>
-<script src='lib/usng/isUsng.js'></script>
-<script src='lib/usng/parseUsng.js'></script>
-<script src='lib/usng/usngToUtm.js'></script>
-<script src='lib/usng.js'></script>
-<script src='lib/mgrs/mgrsToUtm.js'></script>
-<script src='lib/mgrs.js'></script>
-<script src='lib/convert.js'></script>
-<script src='coordinator.js'></script>
-
-<script>
-(function () {
-    "use strict";
-
-    var coordinator = require('coordinator'),
-        latLong = require('latlong');
-
-    $.domReady(function () {
-        $('#latlngConvert').bind('click', function () {
-            var fn = coordinator('latlong', 'mgrs'),
-                res;
-
-            console.log(fn.toString());
-            res = fn($('#srcLatitude').val(), $('#srcLongitude').val(), 5);
-
-            $('#resMgrs').val(res);
-        }, false);
-
-        $('#mgrsConvert').bind('click', function () {
-            var fn = coordinator('mgrs', 'latlong'),
-                res,
-                resFmt;
-
-            res = fn($('#srcMgrs').val());
-
-            resFmt = latLong.toDegMinSec(res.latitude, res.longitude);
-
-            $('#resLatitude').val("" + res.latitude);
-            $('#resLongitude').val("" + res.longitude);
-
-            $('#resFmtLatitude').val(resFmt.latitude);
-            $('#resFmtLongitude').val(resFmt.longitude);
-        }, false);
-    });
-}());
-</script>
-
+<script src='./pakmanaged.js'></script>
 </head>
 
 <body>

@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/beatgammit/node-coordinator.png)](http://travis-ci.org/beatgammit/node-coordinator)
 Intro
 =====
 

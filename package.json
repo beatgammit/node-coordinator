@@ -9,9 +9,6 @@
     "type": "git",
     "url": "git://github.com/beatgammit/node-coordinator.git"
   },
-  "scripts": {
-      "install": "cd examples ; pakmanager build || echo 'Could not build pakmanager package. Please make sure pakmanager is globally installed'"
-  },
   "main": "./coordinator",
   "engines": {
     "node": "*"

@@ -2,7 +2,12 @@
   "author": "T. Jameson Little <t.jameson.little@gmail.com>",
   "name": "coordinator",
   "description": "Converts coordinates (e.g. lat/long to MGRS)",
-  "version": "0.4.7",
+  "licenses": [
+	  {
+		  "type": "MIT"
+	  }
+  ],
+  "version": "0.5.0",
   "homepage": "https://github.com/beatgammit/node-coordinator",
   "keywords": ["gps", "coordinates", "conversion", "mgrs", "usng", "utm", "latitude", "longitude", "lat/long", "coordinate", "system"],
   "repository": {
@@ -12,6 +17,9 @@
   "main": "./coordinator",
   "engines": {
     "node": "*"
+  },
+  "jam": {
+	  "main": "coordinator.js"
   },
   "dependencies": {
   }

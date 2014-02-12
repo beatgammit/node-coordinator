@@ -25,7 +25,7 @@ Everything is modular, which makes things very convenient.  The main file is `in
 
 For example, to convert lat/long to MGRS with 4 digits of precision (within 10 meters), you would do something like this:
 
-    var converter = require('cooridinator'),
+    var converter = require('coordinator'),
         fn = converter('latlong', 'mgrs'),
         mgrs = fn(38.897605896, -77.0365219116, 4);
 
